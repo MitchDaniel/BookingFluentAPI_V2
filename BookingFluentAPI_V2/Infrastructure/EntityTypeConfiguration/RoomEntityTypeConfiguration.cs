@@ -17,11 +17,7 @@ namespace BookingFluentAPI_V2.Infrastructure.EntityTypeConfiguration
             builder.HasKey(r => r.Id);
             builder.Property(r => r.Id).ValueGeneratedOnAdd();
 
-            builder
                .HasOne(r => r.RoomMaintenance)
-               .WithOne(rm => rm.Room)
-               .HasForeignKey<Room>(r => r.RoomMaintenanceId)
-               .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
